@@ -4,8 +4,9 @@ namespace Reservat\Datamapper;
 
 use Reservat\Core\Interfaces\DataMapperInterface;
 use Reservat\Core\Interfaces\EntityInterface;
+use Reservat\Core\Datamapper\ESDataMapper;
 
-class ESBookingDatamapper extends ESDataMapper implements DataMapperInterface
+class ESBookingDatamapper extends ESDatamapper implements DatamapperInterface
 {
 
     protected static $_index = 'bookings';
