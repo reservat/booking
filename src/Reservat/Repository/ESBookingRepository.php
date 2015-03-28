@@ -27,8 +27,8 @@ class ESBookingRepository implements RepositoryInterface
 		    ]
 		];
 
-		$params['index'] = ESBookingMapper::getIndex();
-		$params['type']  = ESBookingMapper::getType();
+		$params['index'] = ESBookingDatamapper::getIndex();
+		$params['type']  = ESBookingDatamapper::getType();
 		$params['body']  = json_encode($query);
 
 		$results = $this->client->search($params);
