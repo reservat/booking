@@ -18,8 +18,7 @@
             "Reservat\\" : "src/Reservat"
         }
     },
-
     "require": {
         "reservat/core": "dev-master"
-    },
+    }
 }
