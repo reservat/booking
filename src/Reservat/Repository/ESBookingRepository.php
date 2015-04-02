@@ -2,11 +2,11 @@
 
 namespace Reservat\Repository;
 
-use Reservat\Core\Interfaces\RepositoryInterface;
+use Reservat\Core\Interfaces\ESRepositoryInterface;
 use Reservat\Datamapper\ESBookingDatamapper;
 use Elasticsearch\Client;
 
-class ESBookingRepository implements RepositoryInterface
+class ESBookingRepository implements ESRepositoryInterface
 {
 	protected $client = null;
 

@@ -2,11 +2,11 @@
 
 namespace Reservat\Datamapper;
 
-use Reservat\Core\Interfaces\DatamapperInterface;
+use Reservat\Core\Interfaces\ESDatamapperInterface;
 use Reservat\Core\Interfaces\EntityInterface;
 use Reservat\Core\Datamapper\ESDatamapper;
 
-class ESBookingDatamapper extends ESDatamapper implements DatamapperInterface
+class ESBookingDatamapper extends ESDatamapper implements ESDatamapperInterface
 {
 
     protected static $_index = 'bookings';
