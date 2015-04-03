@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Reservat;
 
@@ -8,86 +8,86 @@ use Reservat\Interfaces\BookingInterface;
 class Booking implements BookingInterface, EntityInterface
 {
 
-	protected $_bookingId = null;
-	protected $_customer = null;
-	protected $_venue = null;
-	protected $_state = null;
-	protected $_tables = null;
-	protected $_guests = null;
-	protected $_dateStart = null;
-	protected $_dateBooked = null;
+    protected $bookingId = null;
+    protected $customer = null;
+    protected $venue = null;
+    protected $state = null;
+    protected $tables = null;
+    protected $guests = null;
+    protected $dateStart = null;
+    protected $dateBooked = null;
 
-	public function __construct($customer, $venue, $state, $tables, $guests, $dateStart, $dateBooked, $id = false)
-	{
-		$this->_customer = $customer;
-		$this->_venue = $venue;
-		$this->_state = $state;
-		$this->_tables = $tables;
-		$this->_guests = $guests;
-		$this->_dateStart = $dateStart;
-		$this->_dateBooked = $dateBooked;
-		$this->_bookingId = $id ? $id : $this->getId();
-	}
+    public function __construct($customer, $venue, $state, $tables, $guests, $dateStart, $dateBooked, $id = false)
+    {
+        $this->customer = $customer;
+        $this->venue = $venue;
+        $this->state = $state;
+        $this->tables = $tables;
+        $this->guests = $guests;
+        $this->dateStart = $dateStart;
+        $this->dateBooked = $dateBooked;
+        $this->bookingId = $id ? $id : $this->getId();
+    }
 
-	public function setId($id)
-	{
-		$this->_bookingId = $id;
-	}
+    public function setId($id)
+    {
+        $this->bookingId = $id;
+    }
 
-	public function getId()
-	{
-		if(!$this->_bookingId){
-			$this->setId(uniqid());
-		}
-		return $this->_bookingId;
-	}
+    public function getId()
+    {
+        if (!$this->bookingId) {
+            $this->setId(uniqid());
+        }
+        return $this->bookingId;
+    }
 
-	public function getCustomer()
-	{
-		return $this->_customer;
-	}
+    public function getCustomer()
+    {
+        return $this->customer;
+    }
 
-	public function getVenue()
-	{
-		return $this->_venue;
-	}
+    public function getVenue()
+    {
+        return $this->venue;
+    }
 
-	public function getState()
-	{
-		return $this->_state;
-	}
+    public function getState()
+    {
+        return $this->state;
+    }
 
-	public function getTables()
-	{
-		return $this->_tables;
-	}
+    public function getTables()
+    {
+        return $this->tables;
+    }
 
-	public function getGuestsCount()
-	{
-		return $this->_guests;
-	}
+    public function getGuestsCount()
+    {
+        return $this->guests;
+    }
 
-	public function getDateStart()
-	{
-		return $this->_dateStart;
-	}
+    public function getDateStart()
+    {
+        return $this->dateStart;
+    }
 
-	public function getDateBooked()
-	{
-		return $this->_dateBooked;
-	}
+    public function getDateBooked()
+    {
+        return $this->dateBooked;
+    }
 
-	public function toArray()
-	{
-		return [
-			'bookingId' => $this->_bookingId,
-			'customer' => $this->_customer,
-			'venue' => $this->_venue,
-			'state' => $this->_state,
-			'tables' => $this->_tables,
-			'guests' => $this->_guests,
-			'dateStart' => $this->_dateStart->apiFormat(),
-			'dateBooked' => $this->_dateBooked->apiFormat()
-		];
-	}
+    public function toArray()
+    {
+        return [
+            'bookingId' => $this->bookingId,
+            'customer' => $this->customer,
+            'venue' => $this->venue,
+            'state' => $this->state,
+            'tables' => $this->tables,
+            'guests' => $this->guests,
+            'dateStart' => $this->dateStart->apiFormat(),
+            'dateBooked' => $this->dateBooked->apiFormat()
+        ];
+    }
 }
