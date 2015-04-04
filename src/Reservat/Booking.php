@@ -89,7 +89,7 @@ class Booking implements BookingInterface, EntityInterface
 
     public function setGuestsCount($guestsCount)
     {
-        $this->guestsCount = $guestsCount;
+        $this->guests = $guestsCount;
     }
 
     public function getDateStart()
