@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Reservat\Datamapper;
 
@@ -9,14 +9,14 @@ use Reservat\Core\Datamapper\ESDatamapper;
 class ESBookingDatamapper extends ESDatamapper implements ESDatamapperInterface
 {
 
-    protected static $_index = 'bookings';
+    protected static $index = 'bookings';
     
-    protected static $_type = 'booking';
+    protected static $type = 'booking';
 
-    protected static $_id = 'bookingId';
+    protected static $id = 'bookingId';
 
-	protected $_mapping = [
-		'_source' => [
+    protected $mapping = [
+        '_source' => [
                 'enabled' => true
         ],
         'properties' => [
@@ -27,25 +27,24 @@ class ESBookingDatamapper extends ESDatamapper implements ESDatamapperInterface
                 'type' => 'integer'
             ],
             'venueId' => [
-            	'type' => 'integer'
+                'type' => 'integer'
             ],
             'state' => [
                 'type' => 'string'
             ],
             'tableIds' => [
-                "type"  => "integer", 
+                "type"  => "integer",
                 "index_name" => "tableId"
             ],
             'guests' => [
                 'type' => 'integer'
             ],
             'dateStart' => [
-            	'type' => 'date'
+                'type' => 'date'
             ],
             'dateBooked' => [
-            	'type' => 'date'
+                'type' => 'date'
             ]
         ]
-	];
-
+    ];
 }
