@@ -47,9 +47,19 @@ class Booking implements BookingInterface, EntityInterface
         return $this->customer;
     }
 
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
+    }
+
     public function getVenue()
     {
         return $this->venue;
+    }
+
+    public function setVenue($venue)
+    {
+        $this->venue = $venue;
     }
 
     public function getState()
@@ -57,9 +67,19 @@ class Booking implements BookingInterface, EntityInterface
         return $this->state;
     }
 
+    public function setState($state)
+    {
+        $this->state = $state;
+    }
+
     public function getTables()
     {
         return $this->tables;
+    }
+
+    public function setTables($tables)
+    {
+        $this->tables = $tables;
     }
 
     public function getGuestsCount()
@@ -67,14 +87,29 @@ class Booking implements BookingInterface, EntityInterface
         return $this->guests;
     }
 
+    public function setGuestsCount($guestsCount)
+    {
+        $this->guestsCount = $guestsCount;
+    }
+
     public function getDateStart()
     {
         return $this->dateStart;
     }
 
+    public function setDateStart($dateStart)
+    {
+        $this->dateStart = $dateStart;
+    }
+
     public function getDateBooked()
     {
         return $this->dateBooked;
+    }
+
+    public function setDateBooked($dateBooked)
+    {
+        $this->dateBooked = $dateBooked;
     }
 
     public function toArray()
